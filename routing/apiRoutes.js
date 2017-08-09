@@ -1,16 +1,17 @@
 //dependencies
 var bodyParser = require('body-parser');
 var path = require('path');
-var fiend = require('../friend.js')
+var friends = require('../friend.js')
 
 // Your `apiRoutes.js` file should contain two routes:
 module.exports = function(app) {
     //    * A GET route with the url `/api/friends`. This will be used to display a JSON of all possible friends.
     app.get('/api/friends', function(req, res) {
+        res.json(friends);
 
     });
     //    * A POST routes `/api/friends`. This will be used to handle incoming survey results. This route will also be used to handle the compatibility logic.
-    app.get('/api/friends', function(req, res) {
+    app.post('/api/friends', function(req, res) {
         //Logic for comparing answers and matching friends goes here
         //Determine the user's most compatible friend using the following as a guide:
 
