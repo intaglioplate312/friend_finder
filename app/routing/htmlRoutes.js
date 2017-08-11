@@ -3,7 +3,7 @@ var path = require('path');
 
 // export functions for two routes:
 module.exports = function(app) {
-
+    //default
     app.get('/', function(req, res) {
         res.sendFile(path.join(__dirname, '/../public/home.html'))
     });

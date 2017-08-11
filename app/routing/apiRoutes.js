@@ -14,11 +14,11 @@ module.exports = function(app) {
     app.post('/api/friends', function(req, res) {
         console.log("friend or foe");
 
-        grab data in request
-        then match
+        // grab data in request
+        // then match
 
 
-        post data from survey
+        // post data from survey
 
         //Logic for comparing answers and matching friends goes here
         //Determine the user's most compatible friend using the following as a guide:
