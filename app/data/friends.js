@@ -1,6 +1,6 @@
 //data as an array of objects.
 //json
-var fiends = [{
+var friends = [{
         "name": "Riz Ahmed",
         "photo": "../images/Riz_Ahmed.png",
         "scores": [

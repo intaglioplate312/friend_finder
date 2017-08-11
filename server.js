@@ -16,7 +16,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
 //ro͞ots for me routs for everyone else
-// require('./app/routing/apiRoutes.js')(app);
+require('./app/routing/apiRoutes.js')(app);
 require('./app/routing/htmlRoutes.js')(app);
 
 //listener text heroku suggested??
