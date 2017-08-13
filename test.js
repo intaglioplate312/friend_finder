@@ -2,7 +2,6 @@ app.post('/api/friends', function(req, res) {
 
             // Here we take the result of the friend's survey POST and parse it.
             var newFriend = req.body;
-            var newFriend = req.body;
             var lastDiff = [];
             var bestMatch;
             var friendName = newFriend.name;
@@ -11,7 +10,7 @@ app.post('/api/friends', function(req, res) {
 
             var totalDifference = 0;
 
-            // Loop through all the friend possibilities in the database. 
+            // Loop through all the friend possibilities. 
             friend.forEach(function(req, res) {
                 for (var i = 0; i < friends.length; i++) {
 

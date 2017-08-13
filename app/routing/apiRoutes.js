@@ -16,6 +16,50 @@ module.exports = function(app) {
 
         // grab data in request
         // then match
+           var newFriend = req.body;
+            var lastDiff = [];
+            var bestMatch;
+            var friendName = newFriend.name;
+            var friendPhoto = newFriend.photo;
+            var friendScores = newFriend.scores;
+
+            var totalDifference = 0;
+
+            //  With that done, compare the difference between current user's scores against those from other users, question by question. Add up the differences to calculate the `totalDifference`
+            friend.forEach(function(req, res) {
+                for (var i = 0; i < friends.length; i++) {
+
+                    console.log(friends[i].name);
+                    totalDifference = 0;
+
+                    // Loop through all the scores of each friend
+                    for (var j = 0; j < friends[i].scores[j]; j++) {
+
+                        // Add up the differences to calculate the `totalDifference`.
+
+                        totalDifference += Math.abs(parseInt(friendScores[j]) - parseInt(friends[i].scores[j]));
+
+                        // The closest match will be the user with the least amount of difference.
+
+                        if (totalDifference <= bestMatch.friendDifference) {
+
+                            // Reset the bestMatch to be the new friend. 
+                            bestMatch.name = friends[i].name;
+                            bestMatch.photo = friends[i].photo;
+                            bestMatch.friendDifference = totalDifference;
+                        }
+                    }
+                }
+
+                //Once you've found the current user's most compatible friend, display the result as a modal pop-up.
+                friends.push(newFriend);
+
+              // The modal should display both the name and picture of the closest match.o
+
+                res.json(bestMatch);
+
+            });
+
 
 
         // post data from survey
